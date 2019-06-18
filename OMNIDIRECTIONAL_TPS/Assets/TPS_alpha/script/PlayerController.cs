@@ -70,13 +70,11 @@ public class PlayerController : MonoBehaviour
                 MoveVector.y = jumpSpeed;
             }
         }
-        else
-        {
-            //animator.SetFloat("folling",);
-        }
-        animator.SetBool("IsGround", characterController.isGrounded);
-
+        
         MoveVector.y -= Gravity * Time.deltaTime;
+
+        animator.SetBool("IsGround", characterController.isGrounded);
+        animator.SetFloat("folling", MoveVector.y);
 
         animator.SetFloat("speed", new Vector2(Move_x,Move_z).magnitude);
 
