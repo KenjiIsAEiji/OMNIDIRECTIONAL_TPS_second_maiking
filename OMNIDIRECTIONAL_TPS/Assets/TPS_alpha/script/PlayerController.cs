@@ -22,10 +22,14 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 10;
     public bool rolling;
 
+    float _follingY;
+    float _old_follingY;
+
     // Use this for initialization
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        _follingY = transform.position.y;
     }
 
     // Update is called once per frame

@@ -14,25 +14,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: dive
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: folling
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsGround
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -98,7 +98,7 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: JumpTree
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 88457d62070f1a94bab0c8874fea8102, type: 3}
@@ -109,7 +109,7 @@ BlendTree:
     m_DirectBlendParameter: speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 4c2ae314233d09b409bce84e247bbb13, type: 3}
+    m_Motion: {fileID: 7400000, guid: 88457d62070f1a94bab0c8874fea8102, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -117,8 +117,8 @@ BlendTree:
     m_DirectBlendParameter: speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 88457d62070f1a94bab0c8874fea8102, type: 3}
-    m_Threshold: 2
+    m_Motion: {fileID: 7400000, guid: 92f323d2d14d9c04d9fcf4d0cf0d03f6, type: 3}
+    m_Threshold: 20
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -127,7 +127,7 @@ BlendTree:
   m_BlendParameter: folling
   m_BlendParameterY: speed
   m_MinThreshold: -2
-  m_MaxThreshold: 2
+  m_MaxThreshold: 20
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
@@ -164,9 +164,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: IsGround
     m_EventTreshold: 0
-  - m_ConditionMode: 3
-    m_ConditionEvent: folling
-    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102167204268998288}
   m_Solo: 0
@@ -241,7 +238,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: JumpTree
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -327,13 +324,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102695384207085054}
-    m_Position: {x: 168, y: 192, z: 0}
+    m_Position: {x: 160, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102984509110708742}
-    m_Position: {x: 168, y: 108, z: 0}
+    m_Position: {x: 160, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102167204268998288}
-    m_Position: {x: 160, y: 270, z: 0}
+    m_Position: {x: 160, y: 280, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

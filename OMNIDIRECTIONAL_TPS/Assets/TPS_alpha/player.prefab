@@ -83,7 +83,7 @@ MonoBehaviour:
   bodyTransform: {fileID: 5622857712211829690}
   turnSpeed: 10
   escapeSpeed: 12
-  jumpSpeed: 10
+  jumpSpeed: 15
   rolling: 0
 --- !u!1001 &5622857712211966128
 PrefabInstance:
