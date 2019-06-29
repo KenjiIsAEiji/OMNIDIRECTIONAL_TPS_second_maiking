@@ -6,30 +6,29 @@ public class PlayerController : MonoBehaviour
 {
     CharacterController characterController;
 
-    public float MoveSpeed = 10.0f;
-    public float Gravity = 9.8f;
+    [SerializeField] float MoveSpeed = 10.0f;
+    [SerializeField] float Gravity = 9.8f;
 
-    Vector3 MoveVector = Vector3.zero;
+    [SerializeField] Transform CamTransform;
 
-    public Transform CamTransform;
+    [SerializeField] Animator animator;
 
-    public Animator animator;
+    [SerializeField] Transform bodyTransform;
+    [SerializeField] float turnSpeed;
 
-    public Transform bodyTransform;
-    public float turnSpeed;
+    [SerializeField] float escapeSpeed = 10;
+    [SerializeField] float jumpSpeed = 10;
+    [SerializeField] float isGroundedThreshold = 0.1f;
 
-    public float escapeSpeed = 10;
-    public float jumpSpeed = 10;
     public bool rolling;
 
-    float _follingY;
-    float _old_follingY;
-
+    Vector3 MoveVector = Vector3.zero;
+    
     // Use this for initialization
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        _follingY = transform.position.y;
+        
     }
 
     // Update is called once per frame
@@ -77,8 +76,8 @@ public class PlayerController : MonoBehaviour
         
         MoveVector.y -= Gravity * Time.deltaTime;
 
-        animator.SetBool("IsGround", characterController.isGrounded);
-        animator.SetFloat("folling", MoveVector.y);
+        animator.SetBool("IsGround",characterController.isGrounded);
+        animator.SetFloat("folling", characterController.velocity.y);
 
         animator.SetFloat("speed", new Vector2(Move_x,Move_z).magnitude);
 
